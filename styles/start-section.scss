@@ -5,6 +5,7 @@
 
     margin: 0 auto;
 
+    max-width: 1366px;
     width: 100%;
     min-height: 768px;
 
@@ -40,6 +41,9 @@
     .logo:hover, .menu:hover {
         opacity: 80%;
     }
+    .logo:active, .menu:active {
+        opacity: 30%;
+    }
 }
 
 .container--start {
@@ -73,10 +77,10 @@
         .main-title {
             font-family: 'Times New Roman', Times, serif;
             font-weight: 400;
-            font-size: 64px;
+            font-size: 4rem;
             line-height: 74px;
             letter-spacing: 4%;
-            color: #1F3F68
+            color: var(--text-dark-blue);
         }
     }
 

@@ -32,7 +32,7 @@
         width: 358px;
         
         color: rgba(49, 96, 153, 1);
-        font-size: 36px;
+        font-size: 2.25rem;
         line-height: 46px;
         font-weight: 600;
         letter-spacing: 5%;
@@ -79,8 +79,8 @@
             gap: 16px;
 
             h3 {
-                color: #1F3F68;
-                font-size: 20px;
+                color: var(--text-dark-blue);
+                font-size: 1.25rem;
                 line-height: 30px;
                 font-weight: 600;
                 letter-spacing: 5%;
@@ -92,9 +92,9 @@
             flex-direction: row;
             gap: 24px;
             align-items: center;
-            color: #5A98D0;
+            color: var(--main-color);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 0.88rem;
             font-weight: 600;
             line-height: 30px;
             letter-spacing: 5%;
@@ -104,16 +104,20 @@
         .card__button a:hover {
             opacity: 70%;
         }
-
+        .card__button a:active {
+            opacity: 30%;
+        }
         .card__button a:hover svg {
             transform: rotate(180deg) translateX(15px);
         }
-
         .card__button svg {
             transition: transform 0.3s ease-in-out;
         }
     }
 }
 .card:hover {
+    transform: translateY(-5px);
+}
+.card:focus {
     transform: translateY(-5px);
 }
