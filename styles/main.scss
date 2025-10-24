@@ -105,6 +105,14 @@ body {
         width: 100%;
         max-width: 400px;
     }
+    
+    .intersted-block .intersted__text {
+        margin-right: 100px !important;
+    }
+    
+    .footer__information {
+        gap: 80px !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -149,6 +157,56 @@ body {
     
     .about__title {
         min-width: auto !important;
+    }
+    
+    .footer__information {
+        flex-direction: column !important;
+        gap: 50px !important;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .information__left,
+    .information__center,
+    .information__right {
+        align-items: center;
+    }
+    
+    .footer__contacts {
+        align-items: center;
+    }
+    
+    .footer__contacts li {
+        text-align: center;
+        max-width: 100% !important;
+    }
+    
+    .intersted-content {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 30px !important;
+    }
+    
+    .intersted-block .intersted__text {
+        margin-right: 0 !important;
+        align-items: center;
+    }
+    
+    .line {
+        width: 90% !important;
+        margin: 0 auto 60px auto !important;
+    }
+    
+    .intersted-block {
+        margin: 60px auto 60px auto !important;
+    }
+    
+    .footer {
+        border-top-right-radius: 150px !important;
+    }
+    
+    .container--footer {
+        gap: 50px !important;
     }
 }
 
@@ -216,7 +274,7 @@ body {
     }
     
     .footer-section {
-        padding: 60px 0;
+        padding: 60px 0 0 0;
         border-top-left-radius: 100px;
     }
     
@@ -233,6 +291,53 @@ body {
     .about__title h3 {
         font-size: 28px !important;
         line-height: 1.3 !important;
+    }
+    
+    .footer {
+        border-top-right-radius: 100px !important;
+    }
+    
+    .intersted__text h3 {
+        font-size: 1.75rem !important;
+        line-height: 1.3 !important;
+        max-width: 100% !important;
+    }
+    
+    .intersted__text p {
+        max-width: 100% !important;
+    }
+    
+    .footer__information {
+        gap: 40px !important;
+        padding: 0 20px;
+    }
+    
+    .information__left {
+        gap: 25px !important;
+    }
+    
+    .information__center,
+    .information__right {
+        gap: 25px !important;
+    }
+    
+    .footer__copyright {
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        padding: 0 20px;
+    }
+    
+    .container--footer {
+        gap: 40px !important;
+    }
+    
+    .intersted-block {
+        margin: 50px auto 50px auto !important;
+        padding: 0 20px;
+    }
+    
+    .intersted__button .button {
+        padding: 15px 50px !important;
     }
 }
 
@@ -287,7 +392,7 @@ body {
     }
     
     .footer-section {
-        padding: 40px 0;
+        padding: 40px 0 0 0;
         border-top-left-radius: 80px;
     }
     
@@ -309,5 +414,57 @@ body {
     .text {
         font-size: 14px;
         line-height: 1.4;
+    }
+    
+    .footer {
+        border-top-right-radius: 80px !important;
+    }
+    
+    .intersted-block {
+        margin: 40px auto 40px auto !important;
+        padding: 0 15px;
+    }
+    
+    .intersted__text h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .footer__information {
+        gap: 30px !important;
+        padding: 0 15px;
+    }
+    
+    .information__center,
+    .information__right {
+        gap: 20px !important;
+    }
+    
+    .information__center ul,
+    .information__right ul {
+        gap: 12px !important;
+    }
+    
+    .footer__copyright {
+        margin-bottom: 30px !important;
+        padding: 0 15px;
+    }
+    
+    .footer__logo span {
+        font-size: 1.5rem !important;
+    }
+    
+    .intersted__button .button {
+        padding: 12px 40px !important;
+        font-size: 14px;
+    }
+    
+    .footer__contacts li {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .information__center span,
+    .information__right span {
+        font-size: 1.1rem !important;
     }
 }

@@ -83,15 +83,12 @@
             background-color: #4E87BB;
         }
     }
-
 }
 
 .footer {
     display: flex;
     flex-direction: column;
     background-color: rgba(49, 96, 153, 1);
-    
-
     
     max-width: 1270px;
     width: 100%;
@@ -112,6 +109,36 @@
         width: 100%;
 
         margin: 91px auto 96px auto;
+
+        .intersted__text {
+            display: flex;
+            flex-direction: column;
+            gap:32px;
+    
+            margin-right: 180px;
+
+            h3 {
+                display: inline-block;
+                max-width: 318px;
+
+                font-size: 2.25rem;
+                font-weight: 600;
+                line-height: 46px;
+                letter-spacing: 5%;
+                color: #fff;
+            }
+            p {
+                display: inline-block;
+                max-width: 460px;
+                opacity: 40%;
+                color: #fff;
+            }
+        }
+        .intersted__button {
+            .button {
+                padding: 15px 75px;
+            }
+        }
     }
 }
 
@@ -122,6 +149,14 @@
     list-style: none;
     padding: 0;
 
+    li {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 5%;
+        color: #fff;
+        max-width: 264px
+    }
     .contacts__marker {
             font-weight: 600;
             font-size: 1rem;
@@ -131,15 +166,6 @@
             margin-right: 22px;
     }
 }
-
-.footer__contacts li {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 26px;
-        letter-spacing: 5%;
-        color: #fff;
-        max-width: 264px
-    }
 
 .container--footer {
     flex-direction: column;
@@ -224,37 +250,6 @@
         opacity: 30%;
     }
 }
-
-.intersted__text {
-    display: flex;
-    flex-direction: column;
-    gap:32px;
-    
-    margin-right: 180px;
-
-    h3 {
-        display: inline-block;
-        max-width: 318px;
-
-        font-size: 2.25rem;
-        font-weight: 600;
-        line-height: 46px;
-        letter-spacing: 5%;
-        color: #fff;
-    }
-    p {
-        display: inline-block;
-        max-width: 460px;
-        opacity: 40%;
-        color: #fff;
-    }
-}
-.intersted__button {
-    .button {
-        padding: 15px 75px;
-    }
-}
-
 .footer__copyright {
     max-width: 860px;
     width: 100%;
