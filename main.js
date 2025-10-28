@@ -1,9 +1,9 @@
 import "./styles/reset.css";
 import "./styles/main.scss";
 
-import { validateForm } from "./validate.js";
-import { submitForm } from "./sending.js";
-import { openModal, closeModal, showSuccessPopup, hideSuccessPopup } from "./modals.js";
+import { validateForm } from "./modules/validate.js";
+import { submitForm } from "./modules/sending.js";
+import { openModal, closeModal, showSuccessPopup, hideSuccessPopup } from "./modules/modals.js";
 
 const openModalFormBtn = document.querySelector("#open-form");
 const submitBtn = document.querySelector(".submit-button");
