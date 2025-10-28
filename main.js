@@ -1,24 +1,22 @@
 import "./styles/reset.css";
 import "./styles/main.scss";
 
+import { validateForm } from "./validate.js";
+import { submitForm } from "./sending.js";
+import { openModal, closeModal, showSuccessPopup, hideSuccessPopup } from "./modals.js";
+
 const openModalFormBtn = document.querySelector("#open-form");
+const submitBtn = document.querySelector(".submit-button");
 
-function openModal() {
-  const overlay = document.getElementById("modalOverlay");
-  overlay.style.display = "block";
-  document.body.style.overflow = "hidden";
-}
-
-function closeModal() {
-  const overlay = document.getElementById("modalOverlay");
-  overlay.style.display = "none";
-  document.body.style.overflow = "";
-}
+submitBtn.addEventListener("click", validateForm);
 
 function initializeModalHandlers() {
   const closeBtn = document.getElementById("closeModal");
   const overlay = document.getElementById("modalOverlay");
   const form = document.querySelector(".modal__form-content");
+
+  const popupClose = document.querySelector(".popup-close");
+  const successPopup = document.getElementById("successPopup");
 
   closeBtn.addEventListener("click", closeModal);
 
@@ -27,12 +25,46 @@ function initializeModalHandlers() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeModal();
+    if (event.key === "Escape") {
+      closeModal();
+      hideSuccessPopup();
+    }
   });
 
-  form.addEventListener("submit", (event) => {
+  function handleFormSubmit(event) {
     event.preventDefault();
-    closeModal();
+
+    if (validateForm()) {
+      const formData = {
+        name: document.getElementById("fullName").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        message: document.getElementById("message").value.trim(),
+      };
+
+      const submitBtn = document.querySelector(".submit-button");
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = "Sending...";
+      submitBtn.disabled = true;
+
+      submitForm(formData)
+        .then((result) => {
+          if (result.success) {
+            closeModal();
+            showSuccessPopup();
+            event.target.reset();
+          }
+        })
+        .finally(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
+    }
+  }
+
+  form.addEventListener("submit", handleFormSubmit);
+  popupClose.addEventListener("click", hideSuccessPopup);
+  successPopup.addEventListener("click", (event) => {
+    if (event.target === successPopup) hideSuccessPopup();
   });
 }
 
