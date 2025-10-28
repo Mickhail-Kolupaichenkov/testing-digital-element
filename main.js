@@ -1,9 +1,11 @@
 import "./styles/reset.css";
 import "./styles/main.scss";
 
-import { validateForm } from "./modules/validate.js";
+import {
+  openModal, closeModal, showSuccessPopup, hideSuccessPopup, 
+} from "./modules/modals.js";
 import { submitForm } from "./modules/sending.js";
-import { openModal, closeModal, showSuccessPopup, hideSuccessPopup } from "./modules/modals.js";
+import { validateForm } from "./modules/validate.js";
 
 const openModalFormBtn = document.querySelector("#open-form");
 const submitBtn = document.querySelector(".submit-button");
@@ -21,7 +23,9 @@ function initializeModalHandlers() {
   closeBtn.addEventListener("click", closeModal);
 
   overlay.addEventListener("click", (event) => {
-    if (event.target === overlay) closeModal();
+    if (event.target === overlay) {
+      closeModal(); 
+    }
   });
 
   document.addEventListener("keydown", (event) => {
@@ -53,6 +57,7 @@ function initializeModalHandlers() {
             showSuccessPopup();
             event.target.reset();
           }
+          return result;
         })
         .finally(() => {
           submitBtn.textContent = originalText;
@@ -64,7 +69,9 @@ function initializeModalHandlers() {
   form.addEventListener("submit", handleFormSubmit);
   popupClose.addEventListener("click", hideSuccessPopup);
   successPopup.addEventListener("click", (event) => {
-    if (event.target === successPopup) hideSuccessPopup();
+    if (event.target === successPopup) {
+      hideSuccessPopup(); 
+    }
   });
 }
 

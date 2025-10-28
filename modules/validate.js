@@ -1,3 +1,6 @@
+/**
+ *
+ */
 export function validateForm() {
   const nameInput = document.getElementById("fullName");
   const emailInput = document.getElementById("email");

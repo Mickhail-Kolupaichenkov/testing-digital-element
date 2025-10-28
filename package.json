@@ -2,26 +2,35 @@
   "name": "test-project",
   "version": "1.0.0",
   "description": "Test project for Digital Element",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "lint": "eslint src/**/*.js"
+    "dev": "webpack serve --config webpack.config.cjs --mode=development",
+    "build": "webpack --config webpack.config.cjs --mode=production",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@delement/eslint-config-master": "^1.2.0",
     "autoprefixer": "^10.4.21",
+    "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "eslint": "^9.0.0",
     "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.2.0",
     "sass": "^1.93.2",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.2",
+    "webpack-merge": "^6.0.1"
   }
 }
